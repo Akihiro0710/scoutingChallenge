@@ -1,8 +1,0 @@
-package akihiro0710.scoutingChallenge;
-
-/**
- * Created by ta on 2017/06/28.
- */
-public interface ViewIF {
-    public boolean reload();
-}
