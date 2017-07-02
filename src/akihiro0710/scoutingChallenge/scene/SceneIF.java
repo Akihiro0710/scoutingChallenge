@@ -1,11 +1,9 @@
 package akihiro0710.scoutingChallenge.scene;
 
-import javax.swing.*;
-import java.awt.*;
+import akihiro0710.scoutingChallenge.view.ViewIF;
 
 /**
- * Created by ta on 2017/06/28.
+ * Created by ta on 2017/07/02.
  */
-public interface SceneIF {
-    void paint(Graphics2D g2D, int width, int height, JPanel jPanel);
+public interface SceneIF extends ViewIF{
 }

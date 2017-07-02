@@ -1,5 +1,7 @@
 package akihiro0710.scoutingChallenge.scene;
 
+import akihiro0710.scoutingChallenge.view.ViewIF;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,19 +11,14 @@ import java.awt.event.ActionListener;
  * Created by ta on 2017/06/29.
  */
 class ScenePanel extends JPanel implements ActionListener{
-    private SceneIF scene;
+    private ViewIF view;
 
-    ScenePanel(SceneIF scene){
-        setScene(scene);
+    ScenePanel(){
     }
 
-    void setScene(SceneIF scene){
-        this.scene = scene;
-        System.out.println("change scene " + scene.getClass().getSimpleName());
-    }
-
-    SceneIF getScene(){
-        return this.scene;
+    void setScene(ViewIF view){
+        this.view = view;
+        System.out.println("change scene " + view.getClass().getSimpleName());
     }
 
     @Override
@@ -29,7 +26,7 @@ class ScenePanel extends JPanel implements ActionListener{
         Graphics2D g2D = (Graphics2D) g;
         int panelWidth = this.getWidth();
         int panelHeight = this.getHeight();
-        scene.paint(g2D, panelWidth, panelHeight, this);
+        if(view != null) view.paint(g2D, 0, 0, panelWidth, panelHeight, this);
     }
 
     @Override

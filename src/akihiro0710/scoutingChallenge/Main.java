@@ -5,6 +5,7 @@ import akihiro0710.scoutingChallenge.scene.SceneCtrl;
 import akihiro0710.scoutingChallenge.scene.SceneEnum;
 import akihiro0710.scoutingChallenge.wait.Wait;
 
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -27,18 +28,28 @@ public class Main implements KeyListener{
                 () -> {
                     manageFrame = new ManageFrame();
                     manageFrame.addKeyListener(new Main());
-                    sceneCtrl.createFrame(SceneEnum.wait);
+                    sceneCtrl.createFrame();
+                    sceneCtrl.setScene(SceneEnum.wait);
                 }
         ).start();
     }
 
-    private void command(){
-        switch (sceneCtrl.getScene()){
-            case wait:
-                sceneCtrl.setScene(SceneEnum.roulette);
+    private void command(CommandEnum command){
+        switch (command) {
+            case button:
+                switch (sceneCtrl.getScene()) {
+                    case wait:
+                        sceneCtrl.setScene(SceneEnum.roulette);
+                        break;
+                    case roulette:
+                        sceneCtrl.setScene(SceneEnum.wait);
+                        break;
+                    default:
+                        command(CommandEnum.reset);
+                        break;
+                }
                 break;
-            case roulette:
-            default:
+            case reset:
                 sceneCtrl.setScene(SceneEnum.wait);
                 break;
         }
@@ -54,9 +65,16 @@ public class Main implements KeyListener{
 
     @Override
     public void keyReleased(KeyEvent e) {
-        char key = e.getKeyChar();
-        if (key == ' '){
-            command();
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_SPACE){
+            command(CommandEnum.button);
+        }
+        System.out.println(KeyEvent.getKeyText(key));
+        int mod = e.getModifiersEx();
+        if ((mod & InputEvent.CTRL_DOWN_MASK) != 0){
+            if(KeyEvent.getKeyText(key).equals("R")){
+                command(CommandEnum.reset);
+            }
         }
     }
 }

@@ -9,5 +9,5 @@ public enum SceneEnum {
     counter,
     camera,
     photo,
-    judge;
+    judge
 }

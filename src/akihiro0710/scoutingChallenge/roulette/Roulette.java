@@ -1,37 +1,80 @@
 package akihiro0710.scoutingChallenge.roulette;
 
 import akihiro0710.scoutingChallenge.scene.SceneIF;
+import akihiro0710.scoutingChallenge.view.TextView;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
+import java.awt.event.ActionListener;
 
 /**
  * Created by ta on 2017/06/28.
  */
 public class Roulette implements SceneIF {
-    private String imagePath;
-    private BufferedImage image;
+    private final static Color fontColor = Color.white;
+    private final static Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 28);
+    private final RouletteRow[] rows;
+    private final TextView themeView;
+    private final int rowCount = 3;
+    private final int colCount = 12;
+    final static double showCellCount = 3;
+    private final int rollTime;
+    private int time;
+    private final int dt;
+    private Timer timer;
+
 
     public Roulette(){
-        this.imagePath = "logo.png";
-        reload();
-    }
-
-    public boolean reload() {
-        try {
-            this.image = ImageIO.read(getClass().getResource(imagePath));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            this.image = null;
+        rollTime = 5000;
+        dt = 30;
+        rows = new RouletteRow[rowCount];
+        for (int i = 0; i < rowCount; i++){
+            rows[i] = new RouletteRow(colCount, i);
         }
-        return image != null;
+        Color themeBackColor = Color.pink;
+        themeView = new TextView(themeBackColor);
+    }
+    public boolean start(ActionListener listener){
+        timer = new Timer(dt, listener);
+        timer.start();
+        time = 0;
+        return true;
+    }
+    private String[] loadTheme(){
+        String[] texts = new String[colCount];
+        for (int j = 0; j < colCount; j++) {
+            texts[j] = "Sample text, ";
+        }
+        return texts;
     }
 
     @Override
-    public void paint(Graphics2D g2D, int width, int height, JPanel jPanel) {
-        g2D.drawImage(image, 0,0, width, height, jPanel);
+    public boolean stop(){
+        if(timer != null) timer.stop();
+        return true;
+    }
+
+    @Override
+    public void paint(Graphics2D g2D, int x, int y, int width, int height, JPanel jPanel) {
+        g2D.setColor(fontColor);
+        if(time < rollTime + 1000) {
+            int dy;
+            double rollLength = height * (colCount - showCellCount) / showCellCount;
+            if(time < rollTime) dy = (int)(rollLength * time / rollTime);
+            else dy = (int)rollLength;
+            g2D.setFont(font);
+            for (int i = 0; i < rowCount; i++) {
+                int rollY = - dy;
+                if(i % 2 == 1) rollY = - (int)rollLength + dy;
+                rows[i].setTexts(loadTheme());
+                rows[i].paint(g2D, i * width / rowCount, rollY, width / rowCount, height, jPanel);
+            }
+        }else{
+            g2D.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 56));
+            themeView.setText(new String[]{"Theme", "Scene"});
+            themeView.paint(g2D, x, y, width, height, jPanel);
+            timer.stop();
+        }
+        time += dt;
     }
 }
