@@ -20,9 +20,9 @@ public class SceneCtrl {
     }
 
     public void setScene(SceneEnum key){
+        if(activeScene != null) this.panel.getScene().stop();
         activeScene = key;
         this.panel.setScene(sceneMap.get(key));
-
         switch (key){
             case roulette:
             default:

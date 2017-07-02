@@ -20,6 +20,9 @@ class ScenePanel extends JPanel implements ActionListener{
         this.view = view;
         System.out.println("change scene " + view.getClass().getSimpleName());
     }
+    ViewIF getScene(){
+        return view;
+    }
 
     @Override
     public void paintComponent(Graphics g) {

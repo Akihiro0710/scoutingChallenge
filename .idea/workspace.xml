@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ee7adc4-099c-44a0-bca5-f3c99142faec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/CommandEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/RouletteRow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/view/TextView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/view/ViewIF.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/counter/Counter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/Main.java" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/Roulette.java" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/Roulette.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneCtrl.java" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneEnum.java" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneEnum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneIF.java" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneIF.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/ScenePanel.java" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/ScenePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/wait/Wait.java" afterPath="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/wait/Wait.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,8 +36,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="31" column="53" lean-forward="false" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+            <state relative-caret-position="285">
+              <caret line="23" column="59" lean-forward="false" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +70,8 @@
       <file leaf-file-name="RouletteRow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/RouletteRow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="47" column="64" lean-forward="false" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+            <state relative-caret-position="213">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,10 +79,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Counter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/counter/Counter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Roulette.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/Roulette.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="270">
               <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -98,23 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewIF.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/view/ViewIF.java">
+      <file leaf-file-name="SceneEnum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneEnum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/CommandEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="150">
+              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -132,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SceneCtrl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SceneCtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="206">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,10 +138,12 @@
       <file leaf-file-name="ScenePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/ScenePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            <state relative-caret-position="198">
+              <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,10 +204,11 @@
         <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/Scene.java" />
         <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneIF.java" />
         <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/wait/Wait.java" />
-        <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/ScenePanel.java" />
         <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/Roulette.java" />
         <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/Main.java" />
+        <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/ScenePanel.java" />
         <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneCtrl.java" />
+        <option value="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/counter/Counter.java" />
       </list>
     </option>
   </component>
@@ -341,6 +335,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="counter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoutingChallenge" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scoutingChallenge" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="scoutingChallenge" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -365,6 +377,9 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="akihiro0710.scoutingChallenge.counter" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/rulet" />
       <recent name="$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/wait" />
@@ -860,12 +875,12 @@
       <workItem from="1498565058021" duration="28000" />
       <workItem from="1498565230800" duration="761000" />
       <workItem from="1483229048136" duration="28304000" />
-      <workItem from="1498778762084" duration="38958000" />
+      <workItem from="1498778762084" duration="41499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68051000" />
+    <option name="totallyTimeSpent" value="70592000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1095,14 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/CommandEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1149,20 +1156,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/ScenePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/RouletteRow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="47" column="64" lean-forward="false" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+        <state relative-caret-position="285">
+          <caret line="23" column="59" lean-forward="false" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1171,7 +1168,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/Roulette.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="270">
           <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1179,23 +1176,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneEnum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="31" column="53" lean-forward="false" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+        <state relative-caret-position="150">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/roulette/RouletteRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/ScenePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/scene/SceneCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="206">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/akihiro0710/scoutingChallenge/counter/Counter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
