@@ -1,11 +1,10 @@
 package akihiro0710.scoutingChallenge.roulette;
 
-import akihiro0710.scoutingChallenge.view.ViewIF;
 import akihiro0710.scoutingChallenge.view.TextView;
+import akihiro0710.scoutingChallenge.view.ViewIF;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 /**
@@ -30,16 +29,6 @@ class RouletteRow implements ViewIF {
                 break;
             }
         }
-    }
-
-    @Override
-    public boolean start(ActionListener listener) {
-        return false;
-    }
-
-    @Override
-    public boolean stop() {
-        return false;
     }
 
     @Override

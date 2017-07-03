@@ -1,6 +1,8 @@
 package akihiro0710.scoutingChallenge;
 
+import akihiro0710.scoutingChallenge.camera.Camera;
 import akihiro0710.scoutingChallenge.counter.Counter;
+import akihiro0710.scoutingChallenge.judge.Judge;
 import akihiro0710.scoutingChallenge.roulette.Roulette;
 import akihiro0710.scoutingChallenge.scene.SceneCtrl;
 import akihiro0710.scoutingChallenge.scene.SceneEnum;
@@ -22,6 +24,8 @@ public class Main implements KeyListener{
         sceneCtrl.putScene(SceneEnum.wait, new Wait());
         sceneCtrl.putScene(SceneEnum.roulette, new Roulette());
         sceneCtrl.putScene(SceneEnum.counter, new Counter());
+        sceneCtrl.putScene(SceneEnum.camera, new Camera());
+        sceneCtrl.putScene(SceneEnum.judge, new Judge());
         createFrame();
     }
 
@@ -47,10 +51,12 @@ public class Main implements KeyListener{
                         sceneCtrl.setScene(SceneEnum.counter);
                         break;
                     case counter:
-                        sceneCtrl.setScene(SceneEnum.wait);
+                        sceneCtrl.setScene(SceneEnum.camera);
+                        break;
                     case camera:
-                    case photo:
+                        sceneCtrl.setScene(SceneEnum.judge);
                     case judge:
+                        sceneCtrl.setScene(SceneEnum.wait);
                     default:
                         command(CommandEnum.reset);
                         break;

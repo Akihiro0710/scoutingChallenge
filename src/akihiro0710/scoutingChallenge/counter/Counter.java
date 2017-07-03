@@ -5,20 +5,20 @@ import akihiro0710.scoutingChallenge.view.TextView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  * Created by ta on 2017/06/28.
  */
-public class Counter implements SceneIF {
+public class Counter implements SceneIF, ActionListener {
     private final static Color fontColor = Color.white;
-    private final static Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 400);
+    private final static Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 300);
     private final TextView themeView;
     private final int countTime;
     private int time;
     private final int dt;
     private Timer timer;
-
 
     public Counter(){
         countTime = 60 * 10;
@@ -48,5 +48,10 @@ public class Counter implements SceneIF {
         themeView.paint(g2D, x, y, width, height, jPanel);
         time--;
         if(time < 0) timer.stop();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }

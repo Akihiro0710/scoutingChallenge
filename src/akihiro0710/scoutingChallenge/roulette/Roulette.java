@@ -19,6 +19,7 @@ public class Roulette implements SceneIF {
     private final int colCount = 12;
     final static double showCellCount = 3;
     private final int rollTime;
+    private final int rollDelay;
     private int time;
     private final int dt;
     private Timer timer;
@@ -26,6 +27,7 @@ public class Roulette implements SceneIF {
 
     public Roulette(){
         rollTime = 5000;
+        rollDelay = 1000;
         dt = 30;
         rows = new RouletteRow[rowCount];
         for (int i = 0; i < rowCount; i++){
@@ -57,7 +59,7 @@ public class Roulette implements SceneIF {
     @Override
     public void paint(Graphics2D g2D, int x, int y, int width, int height, JPanel jPanel) {
         g2D.setColor(fontColor);
-        if(time < rollTime + 1000) {
+        if(time < rollTime + rollDelay) {
             int dy;
             double rollLength = height * (colCount - showCellCount) / showCellCount;
             if(time < rollTime) dy = (int)(rollLength * time / rollTime);

@@ -20,16 +20,6 @@ public class TextView implements ViewIF{
     }
 
     @Override
-    public boolean start(ActionListener listener) {
-        return false;
-    }
-
-    @Override
-    public boolean stop() {
-        return false;
-    }
-
-    @Override
     public void paint(Graphics2D g2D, int x, int y, int width, int height, JPanel jPanel) {
         g2D.setBackground(backColor);
         g2D.clearRect(x, y, width,height);

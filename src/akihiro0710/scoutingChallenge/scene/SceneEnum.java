@@ -8,6 +8,5 @@ public enum SceneEnum {
     roulette,
     counter,
     camera,
-    photo,
     judge
 }

@@ -1,7 +1,5 @@
 package akihiro0710.scoutingChallenge.scene;
 
-import akihiro0710.scoutingChallenge.view.ViewIF;
-
 import javax.swing.*;
 import java.util.EnumMap;
 
@@ -10,12 +8,12 @@ import java.util.EnumMap;
  */
 public class SceneCtrl {
     private ScenePanel panel;
-    private final EnumMap<SceneEnum, ViewIF> sceneMap = new EnumMap<>(SceneEnum.class);
+    private final EnumMap<SceneEnum, SceneIF> sceneMap = new EnumMap<>(SceneEnum.class);
     private static SceneEnum activeScene;
     public SceneCtrl(){
     }
 
-    public void putScene(SceneEnum key, ViewIF value) {
+    public void putScene(SceneEnum key, SceneIF value) {
         this.sceneMap.put(key, value);
     }
 
