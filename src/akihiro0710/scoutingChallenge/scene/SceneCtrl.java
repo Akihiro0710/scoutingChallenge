@@ -1,5 +1,8 @@
 package akihiro0710.scoutingChallenge.scene;
 
+import akihiro0710.scoutingChallenge.camera.Camera;
+import akihiro0710.scoutingChallenge.judge.Judge;
+
 import javax.swing.*;
 import java.util.EnumMap;
 
@@ -22,7 +25,10 @@ public class SceneCtrl {
         activeScene = key;
         this.panel.setScene(sceneMap.get(key));
         switch (key){
-            case roulette:
+            case judge:
+                Camera camera = (Camera) (this.sceneMap.get(SceneEnum.camera));
+                Judge judge = (Judge) (this.sceneMap.get(SceneEnum.judge));
+                judge.setImage(camera.getImage());
             default:
                 sceneMap.get(key).start(panel);
                 break;

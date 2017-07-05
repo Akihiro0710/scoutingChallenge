@@ -55,8 +55,10 @@ public class Main implements KeyListener{
                         break;
                     case camera:
                         sceneCtrl.setScene(SceneEnum.judge);
+                        break;
                     case judge:
                         sceneCtrl.setScene(SceneEnum.wait);
+                        break;
                     default:
                         command(CommandEnum.reset);
                         break;
