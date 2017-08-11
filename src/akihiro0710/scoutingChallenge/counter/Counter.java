@@ -1,57 +1,39 @@
 package akihiro0710.scoutingChallenge.counter;
 
-import akihiro0710.scoutingChallenge.scene.SceneIF;
+import akihiro0710.scoutingChallenge.scene.AbstractScene;
 import akihiro0710.scoutingChallenge.view.TextView;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  * Created by ta on 2017/06/28.
  */
-public class Counter implements SceneIF, ActionListener {
+public final class Counter extends AbstractScene {
     private final static Color fontColor = Color.white;
     private final static Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 300);
     private final TextView themeView;
     private final int countTime;
     private int time;
-    private final int dt;
-    private Timer timer;
 
-    public Counter(){
-        countTime = 60 * 10;
-        dt = 1000;
-        Color themeBackColor = Color.pink;
-        themeView = new TextView(themeBackColor);
-    }
-
-    public boolean start(ActionListener listener){
-        timer = new Timer(dt, listener);
-        timer.start();
-        time = countTime;
-        return true;
+    public Counter(int countTime){
+        super(1000);
+        this.countTime = countTime;
+        themeView = new TextView(font, fontColor, Color.pink);
     }
 
     @Override
-    public boolean stop(){
-        if(timer != null) timer.stop();
-        return true;
+    public Timer getNewTimer(ActionListener listener){
+        time = countTime;
+        return super.getNewTimer(listener);
     }
 
     @Override
     public void paint(Graphics2D g2D, int x, int y, int width, int height, JPanel jPanel) {
-        g2D.setColor(fontColor);
-        g2D.setFont(font);
-        themeView.setText(new String[]{String.format("%1$02d:%2$02d", time / 60, time % 60)});
+        themeView.setTexts(new String[]{String.format("%1$02d:%2$02d", time / 60, time % 60)});
         themeView.paint(g2D, x, y, width, height, jPanel);
-        time--;
-        if(time < 0) timer.stop();
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
+        time = countTime - passTime() / 1000;
+        if(time < 0) stopTimer();
     }
 }

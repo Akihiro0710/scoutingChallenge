@@ -1,7 +1,7 @@
 package akihiro0710.scoutingChallenge.roulette;
 
 import akihiro0710.scoutingChallenge.view.TextView;
-import akihiro0710.scoutingChallenge.view.ViewIF;
+import akihiro0710.scoutingChallenge.view.IView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,24 +10,23 @@ import java.util.LinkedList;
 /**
  * Created by ta on 2017/07/02.
  */
-class RouletteRow implements ViewIF {
+class RouletteRow implements IView {
     private static Color[] backColors = new Color[]{Color.pink, Color.cyan};
     private LinkedList<TextView> cells;
 
-    RouletteRow(int colCount, int index){
+    RouletteRow(Font font, Color fontColor, int colCount, int row){
         this.cells = new LinkedList<>();
         for (int i = 0; i < colCount; i++) {
-            cells.add(new TextView(backColors[(i + index) % backColors.length]));
+            Color backColor = backColors[(i + row) % backColors.length];
+            cells.add(new TextView(font, fontColor, backColor));
         }
     }
-    void setTexts(String[] texts){
+
+    void setTexts(String[] texts) throws ArrayIndexOutOfBoundsException{
+        if(texts.length != cells.size()) throw new ArrayIndexOutOfBoundsException();
         for (int i = 0; i < cells.size(); i++) {
-            try {
-                cells.get(i).setText(new String[]{texts[i]});
-            }catch (ArrayIndexOutOfBoundsException e){
-                System.out.println("Error: " + e);
-                break;
-            }
+            TextView textView = cells.get(i);
+            textView.setText(texts[i]);
         }
     }
 

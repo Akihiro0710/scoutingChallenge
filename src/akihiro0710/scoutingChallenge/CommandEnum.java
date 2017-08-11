@@ -5,5 +5,6 @@ package akihiro0710.scoutingChallenge;
  */
 public enum CommandEnum {
     button,
-    reset
+    reset,
+    fullScreen
 }
