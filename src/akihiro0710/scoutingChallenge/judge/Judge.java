@@ -1,11 +1,13 @@
 package akihiro0710.scoutingChallenge.judge;
 
-import akihiro0710.scoutingChallenge.scene.SceneIF;
+import akihiro0710.scoutingChallenge.pict.ChangePictListener;
+import akihiro0710.scoutingChallenge.scene.AbstractScene;
+import akihiro0710.scoutingChallenge.view.IView;
+import akihiro0710.scoutingChallenge.view.ImageView;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.EnumMap;
@@ -13,47 +15,44 @@ import java.util.EnumMap;
 /**
  * Created by ta on 2017/06/28.
  */
-public class Judge implements SceneIF {
-    private BufferedImage image;
-    private EnumMap<JudgeEnum, BufferedImage> judgeMap = new EnumMap<>(JudgeEnum.class);
-    private BufferedImage judgeImage;
-    private Timer timer;
+public final class Judge extends AbstractScene implements ChangePictListener {
+    private final static EnumMap<JudgeEnum, IView> Results = new EnumMap<>(JudgeEnum.class);
+    private ImageView imageView;
+    private JudgeEnum judge;
 
     public Judge() {
+        super(100);
         try {
-            judgeMap.put(JudgeEnum.success, ImageIO.read(getClass().getResource("success.png")));
-            judgeMap.put(JudgeEnum.failed, ImageIO.read(getClass().getResource("failed.png")));
-        } catch (IOException ex) {
-            ex.printStackTrace();
+            for(JudgeEnum key : JudgeEnum.values()) {
+                BufferedImage image = ImageIO.read(getClass().getResource(key + ".png"));
+                Results.put(key, new ImageView(image));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        judge(JudgeEnum.success);
+        setJudge(JudgeEnum.success);
+        imageView = new ImageView();
     }
 
-    public void setImage(BufferedImage image){
-        this.image = image;
-    }
-
-    public void judge(JudgeEnum key){
-        judgeImage = judgeMap.get(key);
-    }
-
-    @Override
-    public boolean start(ActionListener listener) {
-        timer = new Timer(1000, listener);
-        timer.setRepeats(false);
-        timer.start();
-        return true;
-    }
-
-    @Override
-    public boolean stop() {
-        if(timer != null) timer.stop();
-        return true;
+    void setJudge(JudgeEnum judge){
+        this.judge = judge;
     }
 
     @Override
     public void paint(Graphics2D g2D, int x, int y, int width, int height, JPanel jPanel) {
-        g2D.drawImage(image, x, y, width, height, jPanel);
-        g2D.drawImage(judgeImage, x, y, width, height, jPanel);
+        imageView.paint(g2D, x, y, width, height, jPanel);
+        Results.get(judge).paint(g2D, x, y, width, height, jPanel);
+    }
+
+    @Override
+    public boolean stopTimer() {
+        return !timer.isRunning();
+    }
+
+    @Override
+    public void setPict(BufferedImage image) {
+        int time = passTime();
+        imageView.setImage(image);
+        if(time == 1000) super.stopTimer();
     }
 }
